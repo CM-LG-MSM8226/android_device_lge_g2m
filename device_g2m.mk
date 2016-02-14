@@ -14,9 +14,12 @@
 # limitations under the License.
 #
 
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+# Include common makefile
+$(call inherit-product, device/lge/msm8226-common/msm8226.mk)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, frameworks/native-caf/build/phone-hdpi-dalvik-heap.mk)
+
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Specific overlay
 DEVICE_PACKAGE_OVERLAYS += device/lge/g2m/overlay
@@ -54,8 +57,4 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Common specific options
 BOARD_HAS_QCOM_WCNSS := true
 BOARD_HAS_NFC := true
-
-# Inherit from msm8226-common
-$(call inherit-product, device/lge/msm8226-common/msm8226.mk)
-$(call inherit-product, vendor/lge/g2m/g2m-vendor.mk)
 
