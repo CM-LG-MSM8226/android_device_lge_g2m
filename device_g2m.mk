@@ -19,7 +19,7 @@ $(call inherit-product, device/lge/msm8226-common/msm8226.mk)
 
 $(call inherit-product, frameworks/native-caf/build/phone-hdpi-dalvik-heap.mk)
 
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Specific overlay
 DEVICE_PACKAGE_OVERLAYS += device/lge/g2m/overlay
