@@ -42,7 +42,7 @@ void vendor_load_properties()
     char device[PROP_VALUE_MAX];
     char devicename[PROP_VALUE_MAX];
 
-    property_get("ro.boot.serialno", serial);
+    strcpy(serial, property_get("ro.boot.serialno").c_str());
     if (strncmp(serial, "LGD618", 6) == 0) {
         /* D618 */
         property_set("ro.product.device", "g2mds");
@@ -79,7 +79,7 @@ void vendor_load_properties()
         property_set("persist.multisim.config", "");
     }
 
-    property_get("ro.product.device", device);
+    strcpy(device, property_get("ro.product.device").c_str());
     strlcpy(devicename, device, sizeof(devicename));
     ERROR("Found hardware id: %s setting build properties for %s device\n", serial, devicename);
 }
